@@ -1,0 +1,19 @@
+---
+
+- name: print facts
+  hosts: all
+    #gather_facts: False
+  tasks:
+     - name: Print Os name
+       debug:
+         var: ansible_distribution
+     - name: Print selinux name
+       debug:
+         var: ansible_selinux.mode
+     - name: Print RAM memory
+       debug:
+         var: ansible_memory_mb.real.free
+     - name: Print Processor name
+       debug:
+         var: ansible_preocessor[2]
+
